@@ -32,6 +32,7 @@ Patch54:	z05-gcc4-fix.bz2
 
 License:        3dfx Glide General Public License
 Group:          System/Libraries
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 ExclusiveArch:  %{ix86} ia64 alpha x86_64
 BuildRequires:	X11-devel automake1.7 autoconf2.5
 URL:		http://glide.sourceforge.net/
