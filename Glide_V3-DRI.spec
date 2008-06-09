@@ -95,11 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 #we don't want these
 rm -f $RPM_BUILD_ROOT%{_libdir}/libglide3.*a
 
-%postun
-/sbin/ldconfig
+%postun -p /sbin/ldconfig
 
-%post
-/sbin/ldconfig
+%post -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
