@@ -35,7 +35,7 @@ Patch28:	z05-gcc4-fix
 Patch29:	z06-gcc401-fix
 Patch30:	z07-cpudetect-no-ia32
 ExclusiveArch:	%{ix86} ia64 alpha x86_64
-BuildRequires:	X11-devel automake1.7 autoconf2.5
+BuildRequires:	X11-devel automake1.7 autoconf2.5 libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description 
