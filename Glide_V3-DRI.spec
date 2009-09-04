@@ -1,7 +1,7 @@
 Summary:	Glide runtime for 3Dfx Voodoo Banshee and Voodoo3 boards
 Name:		Glide_V3-DRI
 Version:	2002.04.10
-Release:	%mkrel 2
+Release:	%mkrel 3
 Epoch:		1
 Group:          System/Libraries
 License:        3dfx Glide General Public License
