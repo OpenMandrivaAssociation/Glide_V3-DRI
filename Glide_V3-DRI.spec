@@ -1,7 +1,7 @@
 Summary:	Glide runtime for 3Dfx Voodoo Banshee and Voodoo3 boards
 Name:		Glide_V3-DRI
 Version:	2002.04.10
-Release:	%mkrel 3
+Release:	%mkrel 4
 Epoch:		1
 Group:          System/Libraries
 License:        3dfx Glide General Public License
@@ -35,7 +35,7 @@ Patch28:	z05-gcc4-fix
 Patch29:	z06-gcc401-fix
 Patch30:	z07-cpudetect-no-ia32
 ExclusiveArch:	%{ix86} ia64 alpha x86_64
-BuildRequires:	X11-devel automake1.7 autoconf2.5 libtool
+BuildRequires:	X11-devel automake autoconf2.5 libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description 
@@ -87,8 +87,8 @@ find -type f -name "makefile*" | xargs perl -pi -e "s|/usr/X11R6/lib\b|/usr/X11R
 
 %build
 libtoolize --copy --force
-aclocal-1.7
-automake-1.7 -a
+aclocal
+automake -a
 autoconf
 
 # Build for V3 with DRI
