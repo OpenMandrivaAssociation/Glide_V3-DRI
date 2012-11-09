@@ -1,0 +1,228 @@
+Status: applied
+
+diff -ur cvg/glide3/tests/display.c cvg/glide3/tests/display.c
+--- cvg/glide3/tests/display.c	2005-08-05 03:46:20.000000000 +0300
++++ cvg/glide3/tests/display.c	2005-08-05 03:43:04.000000000 +0300
+@@ -56,6 +56,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -81,11 +85,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     srcfname[0] = 0;
+     dstfname[0] = 0;
+ 
+diff -ur cvg/glide3/tests/test26.c cvg/glide3/tests/test26.c
+--- cvg/glide3/tests/test26.c	1999-12-07 23:42:42.000000000 +0200
++++ cvg/glide3/tests/test26.c	2005-08-05 03:48:25.000000000 +0300
+@@ -48,6 +48,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -69,11 +73,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     /* Initialize Glide */
+     grGlideInit();
+     assert( hwconfig = tlVoodooType() );
+diff -ur h3/glide3/tests/display.c h3/glide3/tests/display.c
+--- h3/glide3/tests/display.c	2005-08-05 03:46:20.000000000 +0300
++++ h3/glide3/tests/display.c	2005-08-05 03:43:04.000000000 +0300
+@@ -56,6 +56,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -81,11 +85,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     srcfname[0] = 0;
+     dstfname[0] = 0;
+ 
+diff -ur h3/glide3/tests/test26.c h3/glide3/tests/test26.c
+--- h3/glide3/tests/test26.c	2000-01-19 20:16:19.000000000 +0200
++++ h3/glide3/tests/test26.c	2005-08-05 03:48:53.000000000 +0300
+@@ -48,6 +48,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -69,11 +73,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     /* Initialize Glide */
+     grGlideInit();
+     assert( hwconfig = tlVoodooType() );
+diff -ur h5/glide3/tests/display.c h5/glide3/tests/display.c
+--- h5/glide3/tests/display.c	2005-08-05 03:46:20.000000000 +0300
++++ h5/glide3/tests/display.c	2005-08-05 03:43:04.000000000 +0300
+@@ -72,6 +72,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -97,11 +101,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     srcfname[0] = 0;
+     dstfname[0] = 0;
+ 
+diff -ur h5/glide3/tests/test26.c h5/glide3/tests/test26.c
+--- h5/glide3/tests/test26.c	2000-06-15 03:23:50.000000000 +0300
++++ h5/glide3/tests/test26.c	2005-08-05 03:49:24.000000000 +0300
+@@ -64,6 +64,10 @@
+     "GR_LFB_SRC_FMT_ZA16      "
+ };
+ 
++static void imageConvert( void *dst,
++                          void *src,
++                          GrLfbSrcFmt_t format,
++                          FxU32 *bpp );
+ 
+ void main( int argc, char **argv) {
+     char match; 
+@@ -86,11 +90,6 @@
+     static FxU32 imageWidth;
+     static FxU32 imageHeight;
+ 
+-    static void imageConvert( void *dst, 
+-                              void *src,
+-                              GrLfbSrcFmt_t format, 
+-                              FxU32 *bpp );
+-
+     /* Initialize Glide */
+     grGlideInit();
+     assert( hwconfig = tlVoodooType() );
+diff -Naur h3/glide3/src/xdraw2.inc.S h3/glide3/src/xdraw2.inc.S
+--- h3/glide3/src/xdraw2.inc.S	2005-08-05 05:20:30.000000000 +0300
++++ h3/glide3/src/xdraw2.inc.S	2005-08-05 05:16:47.000000000 +0300
+@@ -59,6 +59,8 @@
+ .file "xdraw2.inc.S"
+ 
+ 
++#ifndef XDRAW2_FIFO_MACROS
++#define XDRAW2_FIFO_MACROS
+ .macro GR_FIFO_WRITE __addr __offset __data
+ 	mov \__data , \__offset(\__addr)
+ .endm	/*  GR_FIFO_WRITE */
+@@ -72,6 +74,7 @@
+ .macro WRITE_MM1LOW_FIFO 
+ 	movd %mm1 , (%ebp)	/*  store current param | previous param */
+ .endm	/*  WRITE_MM1LOW_FIFO */
++#endif
+ 
+ 
+ #if 0
+@@ -815,9 +818,12 @@
+ #define packCol %edi
+ #define tempVal %edi
+ 
++#ifndef XDRAW2_FIFO_MACROS
++#define XDRAW2_FIFO_MACROS
+ .macro GR_FIFO_WRITE __addr __offset __data
+ 	mov \__data , \__offset(\__addr)
+ .endm	/*  GR_FIFO_WRITE */
++#endif
+ 
+ .align 4
+ LOCAL(__triBegin):
+diff -Naur h5/glide3/src/xdraw2.inc.s h5/glide3/src/xdraw2.inc.s
+--- h5/glide3/src/xdraw2.inc.s	2005-08-05 05:20:31.000000000 +0300
++++ h5/glide3/src/xdraw2.inc.s	2005-08-05 05:17:51.000000000 +0300
+@@ -81,6 +81,8 @@
+ .file "xdraw2.inc.S"
+ 
+ 
++#ifndef XDRAW2_FIFO_MACROS
++#define XDRAW2_FIFO_MACROS
+ .macro GR_FIFO_WRITE __addr __offset __data
+ #ifdef HAL_CSIM
+ 	pushad 
+@@ -121,6 +123,7 @@
+ 	movd %mm1 , (%ebp)	/*  store current param | previous param */
+ #endif
+ .endm	/*  WRITE_MM1LOW_FIFO */
++#endif
+ 
+ 
+ #if 0
+@@ -867,6 +870,8 @@
+ #define packCol %edi
+ #define tempVal %edi
+ 
++#ifndef XDRAW2_FIFO_MACROS
++#define XDRAW2_FIFO_MACROS
+ .macro GR_FIFO_WRITE __addr __offset __data
+ #ifdef HAL_CSIM
+ 	pushad 
+@@ -884,6 +889,7 @@
+ 	mov \__data , \__offset(\__addr)
+ #endif
+ .endm	/*  GR_FIFO_WRITE */
++#endif
+ 
+ .align 4
+ LOCAL(__triBegin):
