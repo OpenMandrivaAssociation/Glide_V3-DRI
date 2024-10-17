@@ -5,7 +5,7 @@ Release:	%mkrel 4
 Epoch:		1
 Group:          System/Libraries
 License:        3dfx Glide General Public License
-URL:		http://glide.sourceforge.net/
+URL:		https://glide.sourceforge.net/
 Source0:	glide3x.2002.04.10.tar.bz2
 Source1:	swlibs.2001.01.26.tar.bz2
 #Debian patches
